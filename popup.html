@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <style>
+      h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-width: 200px;
+        min-height: 30px;
+      }
+
+      #openLabPage {
+        width: 75%;
+        height: 30px;
+        font-size: 15px;
+        background-color: aqua;
+      }
+
+      #settingsButton {
+        width: 20%;
+        height: 30px;
+        font-size: 15px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        position: absolute;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        height: max-content;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .close-button {
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        width: min-content;
+        height: min-content;
+        border: none;
+        background: none;
+        font-size: 40px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="openLabPage">Open labGPT</button>
+    <button id="settingsButton"><i class="fas fa-cog"></i></button>
+    <div id="settingsModal" class="modal">
+      <div class="modal-content">
+        <button id="closeModal" class="close-button">&times;</button>
+        <h1>Settings</h1>
+        <br />
+        <label for="openAIKey">OpenAI API Key:</label>
+        <input
+          type="password"
+          id="openAIKey"
+          name="openAIKey"
+          placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        />
+        <button id="saveAPIKey">Save</button>
+        <p id="savedAPIKey"></p>
+        <br />
+        <label for="User's Name">OpenAI API Key:</label>
+        <input type="input" id="name" name="name" placeholder="John" />
+        <button id="saveName">Save</button>
+        <p id="savedName"></p>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
